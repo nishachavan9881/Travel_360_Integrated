@@ -1,0 +1,136 @@
+{
+  "info": {
+    "name": "Travel360 Billing & Payment APIs",
+    "_postman_id": "c4f96b03-b73f-4cdf-9e18-3e092a5f55e9",
+    "description": "Postman collection for Invoice and Payment module endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Invoice",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"bookingId\": 1001,\n  \"invoiceAmount\": 2500.00\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/invoices",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "invoices"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Invoices",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/invoices",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "invoices"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Invoice By Id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/invoices/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "invoices",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"invoiceId\": 1,\n  \"amountPaid\": 2500.00,\n  \"paymentMethod\": \"UPI\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/payments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "payments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Payments",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/payments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "payments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Payments By Invoice Id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/invoices/1/payments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "invoices",
+            "1",
+            "payments"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8082"
+    }
+  ]
+}
+
